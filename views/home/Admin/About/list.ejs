@@ -1,0 +1,104 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+    <%- include('../../../_partials/dashboard/_sidebar'); -%>
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="display: inline;">About List</h4>
+                                <!-- <a class="card-description badge badge-success" href="/addabout" style="color: white !important;margin-left: 80px;">Add</a>                                <div class="table-responsive"> -->
+                                    <table class="table table-hover table-responsive">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>Actions</th>
+                                                <th>Image1</th>
+                                                <th>Image2</th>
+                                                <th>Image3</th>
+                                                <th>Icon1</th>
+                                                <th>Content</th>
+                                                <th>Icon2</th>
+                                                <th>Content</th>
+                                                <th>Icon3</th>
+                                                <th>Content</th>
+
+                                                <th>description</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% ab.forEach(abb=> { %>
+                                                <tr>
+                                                    <td>
+                                                        <a href="/aboutus/<%= abb._id %>/edit" class="badge badge-info">Edit</a>
+                                                        <!-- <form action="/aboutus/<%= abb._id %>/delete" method="POST" style="display: inline;">
+                                                          <button type="submit" class="badge badge-danger">Delete</button>
+                                                        </form> -->
+                                                      </td>
+                                                      <td class="py-1">
+                                                        <img src="../../images/<%= abb.image1 %>" alt="image" />
+                                                    </td>
+                                                    <td class="py-1">
+                                                        <img src="../../images/<%= abb.image2 %>" alt="image" />
+                                                    </td> 
+                                                    <td class="py-1">
+                                                        <img src="../../images/<%= abb.image3 %>" alt="image" />
+                                                    </td>
+                                                    <td class="py-1">
+                                                        <img src="../../images/<%= abb.icon1 %>" alt="image" />
+                                                    </td>
+                                                    <td>
+                                                        <%= abb.content1 %>
+                                                    </td>  
+                                                    <td class="py-1">
+                                                        <img src="../../images/<%= abb.icon2 %>" alt="image" />
+                                                    </td>
+                                                    <td>
+                                                        <%= abb.content2 %>
+                                                    </td> 
+                                                    <td class="py-1">
+                                                        <img src="../../images/<%= abb.icon3 %>" alt="image" />
+                                                    </td>
+                                                    <td>
+                                                        <%= abb.content3 %>
+                                                    </td>
+                                                     <td>
+                                                        <%= abb.description %>
+                                                    </td>
+                                                    
+                                                   
+                                                    
+                                                </tr>
+                                                <% }) %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- include('../../../_partials/dashboard/_footer'); -%>
+                        <!-- partial -->
+                </div>
+                <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+        <script src="/dashboard/vendors/select2/select2.min.js"></script>
+        <script src="/dashboard/js/off-canvas.js"></script>
+        <script src="/dashboard/js/hoverable-collapse.js"></script>
+        <script src="/dashboard/js/template.js"></script>
+        <script src="/dashboard/js/settings.js"></script>
+        <script src="/dashboard/js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="/dashboard/js/file-upload.js"></script>
+        <script src="/dashboard/js/typeahead.js"></script>
+        <script src="/dashboard/js/select2.js"></script>
+        <!-- End custom js for this page-->
+        </body>
+
+        </html>

@@ -1,0 +1,88 @@
+
+  <%- include('../../../_partials/dashboard/_header'); -%>
+    <%- include('../../../_partials/dashboard/_sidebar'); -%>
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Admin Profile</h4>
+
+                  <div class="col-12 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        
+                        <form method="POST" class="form-inline" action="/profile">
+                         
+                          
+                          <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+                          <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">@</div>
+                            </div>
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                              placeholder="Username" name="newUsername" value="<%= user.Username %>">
+                          </div>
+                          <label class="sr-only" for="inlineFormInputGroupUsername2">Email</label>
+                          <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="mdi mdi-email"></i></div>
+                            </div>
+                            <input type="text" class="form-control" name="newEmail" value="<%= user.email %>">
+                        
+                          </div> <label class="sr-only" for="inlineFormInputGroupUsername2">Password</label>
+                          <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="mdi mdi-key-variant"></i></div>
+                            </div>
+                            <input type="password" class="form-control" name="newPassword">
+                        
+                          </div>
+                          <div class="form-check mx-sm-2">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" checked>
+                              Remember me
+                            </label>
+                          </div>
+                          <input type="submit" class="btn btn-primary mb-2" value="Update">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:/dashboard/partials/_footer.html -->
+        <%- include('../../../_partials/dashboard/_footer'); -%>
+          <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+      </div>
+      <!-- container-scroller -->
+      <!-- plugins:js -->
+      <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+      <!-- endinject -->
+      <!-- Plugin js for this page -->
+      <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+      <script src="/dashboard/vendors/select2/select2.min.js"></script>
+      <!-- End plugin js for this page -->
+      <!-- inject:js -->
+      <script src="/dashboard/js/off-canvas.js"></script>
+      <script src="/dashboard/js/hoverable-collapse.js"></script>
+      <script src="/dashboard/js/template.js"></script>
+      <script src="/dashboard/js/settings.js"></script>
+      <script src="/dashboard/js/todolist.js"></script>
+      <!-- endinject -->
+      <script src="/dashboard/js/file-upload.js"></script>
+      <script src="/dashboard/js/typeahead.js"></script>
+      <script src="/dashboard/js/select2.js"></script>
+</body>
+
+</html>

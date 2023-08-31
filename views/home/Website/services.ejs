@@ -1,0 +1,95 @@
+<%- include ('../../_partials/service_header'); -%>
+    <div class="content-wrapper  js-content-wrapper">
+        <section data-anim="fade" class="breadcrumbs ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="breadcrumbs__content">
+
+                            <div class="breadcrumbs__item ">
+                                <a href="<%=baseUrl %>/home">Home</a>
+                            </div>
+
+                            <div class="breadcrumbs__item ">Services
+                            </div>
+
+                            <div class="breadcrumbs__item "> <% if (service.title) { %>
+                                    <%= service.title %>
+                                  <% } else { %>
+                                    <%= service.name %>
+                                  <% } %>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="js-pin-container">
+            <section class="page-header -type-5 bg-light-6"
+                style="background:linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);">
+                <!-- <div class="page-header__bg">
+          <div class="bg-image js-lazy" data-bg="img/event-single/bg.png"></div>
+        </div> -->
+
+                <div class="container">
+                    <div class="page-header__content pb-90" style="padding-bottom: 40px  !important; ">
+                        <div class="row y-gap-30 relative">
+                            <div class="col-xl-7 col-lg-8">
+                                <div>
+                                    <h1 class="text-30 lh-14 pr-50 lg:pr-0">
+                                        <% if (service.title) { %>
+                                            <%= service.title %>
+                                          <% } else { %>
+                                            <%= service.name %>
+                                          <% } %>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="courses-single-info js-pin-content">
+                                <div class="bg-white shadow-2 rounded-8 border-light py-10 px-10">
+                                    <div class="relative">
+                                        <img class="w-1/1" src="../../images/<%= service.imageUrl %>" alt="image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="layout-pb-md">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="page-nav-menu -line">
+                                <div class="d-flex x-gap-30">
+                                    <div class="services"><a href="#overview"
+                                            class="pb-12 page-nav-menu__link is-active">Overview</a></div>
+                                </div>
+                            </div>
+
+                            <div id="overview" class="lg:pt-40 to-over">
+                                <!-- <h4 class="text-18 fw-500">Description</h4> -->
+
+                                <div class="show-more mt-30 js-show-more">
+                                    <div class="show-more__content">
+                                        <%- service.description.replace(/<p>(.*?)<\/p>/g, '<p class="paragraph">$1</p>').replace(/<li>(.*?)<\/li>/g, '<li class="list">● $1</li>').replace(/<h4>(.*?)<\/h4>/g, '<br><h4 class="heading"><strong>$1</strong></h4><br>').replace(/<\/p>/g, '</p><br>').replace(/<ul>(.*?)<\/ul>/g, '<ul class="bullet-points">$1</ul>') %>
+                                    </div>
+                                    <button class="show-more__button text-purple-1 fw-500 underline mt-30">Show
+                                        more</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+
+    </div>
+    <%- include ('../../_partials/_toplinks'); -%>
+        <%- include ('../../_partials/_footer'); -%>

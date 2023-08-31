@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pendler Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <link href="/careers/img/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/careers/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/careers/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/careers/css/style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" type="text/css" href="/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="/dist/leaflet.css" />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="/slider/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/card/style.css">
+    <script src="https://kit.fontawesome.com/13cc690693.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <nav class="rj">
+            <div class="srjwrapper">
+                <div class="logo" style="width: 200px;">
+                    <a href="<%=baseUrl %>/home"><img src="/img/pendlerlogo.png"></img></a>
+                </div>
+                <input type="radio" name="slider" id="menu-btn">
+                <input type="radio" name="slider" id="close-btn">
+                <ul class="nav-links">
+                    <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+                    <li class="srj"><a href="/home"><i aria-hidden="true" class="fas fa-home fa-fw"></i></a></li>
+                    <li class="srj"><a href="<%=baseUrl %>/about">About Us</a></li>
+                    <li class="srj"><a href="<%=baseUrl %>/technologies">Technologies</a></li>
+
+                    <li class="srj">
+                        <a href="#" class="desktop-item">Services</a>
+                        <input type="checkbox" id="showMega">
+                        <label for="showMega" class="mobile-item">Services</label>
+                        <div class="mega-box">
+                            <div class="srjcontent">
+                                <div class="srjrow col-md-3">
+                                    <header>Our Services</header>
+                                    <p>The services are provided by businesses or professionals to help organizations
+                                        manage their IT
+                                        infrastructure, <br>improve their productivity, and enhance their overall
+                                        performance. </p>
+                                </div>
+                                <div class="srjrow col-md-3">
+                                    <% ser.forEach((serr,index)=> { %>
+                                        <div class="mySlides fade">
+                                            <header style="padding-left: 15px;">
+                                                <%= serr.name %>
+                                            </header>
+
+
+                                            <img src="../../images/<%= serr.imageUrl %>" style="width:100%">
+                                        </div>
+                                        <% }) %>
+
+                                            <div style="text-align:center">
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                                <span class="dot" style="display:none;"></span>
+                                            </div>
+                                </div>
+                                <div class="srjrow  col-md-3">
+                                    <ul class="mega-links" style="padding-top: 39px;">
+                                        <% ser1.forEach((serr,index)=> { %>
+                                            <li class="srj"><a
+                                                    href="<%=baseUrl %>/<%= serr.pageUrl %>/<%= serr._id %>"><i
+                                                        class="fas fa-caret-right pe-2"></i>
+                                                    <%= serr.name %>
+                                                </a></li>
+                                            <% }) %>
+
+                                    </ul>
+                                </div>
+
+                                <div class="srjrow col-md-3">
+                                    <ul class="mega-links" style="padding-top: 39px;">
+                                        <% ser2.forEach((serrr,index)=> { %>
+                                            <li class="srj"><a
+                                                    href="<%=baseUrl %>/<%= serrr.pageUrl %>/<%= serrr._id %>"><i
+                                                        class="fas fa-caret-right pe-2"></i>
+                                                    <%= serrr.name %>
+                                                </a></li>
+                                            <% }) %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="srj"><a href="<%=baseUrl %>/careers">Careers</a></li>
+                    <li class="srj"><a href="<%=baseUrl %>/contactus">Contact</a></li>
+                    <li class="srj"><a href="<%=baseUrl %>/login"><i class='fas fa-sign-in-alt'></i> Login</a></li>
+                </ul>
+                <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"
+                        style="background-color: #1c1349;"></i></label>
+            </div>
+        </nav>
+        <div class="body-text">
+            <div class="title">pendler</div>
+        </div>
+        <!-- <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div> -->
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+        </script>
+        <section class="breadcrumbs ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto">
+                        <div class="breadcrumbs__content">
+
+                            <div class="breadcrumbs__item ">
+                                <a href="<%=baseUrl %>/home">Home</a>
+                            </div>
+
+                            <div class="breadcrumbs__item ">
+                                <a href="<%=baseUrl %>/careers">Careers</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-header -type-1" style="background:linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);">
+            <div class="page-header__content">
+                <div class="row justify-center text-center">
+                    <div class="col-auto">
+                        <div>
+
+                            <h1 class="page-header__title">Our Careers</h1>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Job Detail Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: slideInUp;">
+                <div class="row gy-5 gx-4">
+                    <div class="col-lg-10">
+                        <div class="d-flex align-items-center mb-5">
+                            <div class="text-start ps-4">
+                                <h3 class="mb-3"><%- jobdescription.jobrole -%></h3>
+                               </div>
+                        </div>
+
+                        <div class="mb-5">
+                            <h4 class="mb-3">Job Description</h4>
+                            <%- jobdescription.description.replace(/<p>(.*?)<\/p>/g, '<p class="paragraph">$1</p>').replace(/<li>(.*?)<\/li>/g, '<li><i class="fa fa-angle-right text-primary me-2"></i> $1</li>').replace(/<h4>(.*?)<\/h4>/g, '<br><h4 class="mb-3"><strong>$1</strong></h4><br>').replace(/<\/p>/g, '</p><br>').replace(/<ul>(.*?)<\/ul>/g, '<ul class="list-unstyled">$1</ul>').replace(/<\/ol>/g, '</ul>').replace(/<ol>/g, '<ul class="list-unstyled">') %>
+                        </div>
+        
+                        
+                    </div>
+        
+                    <div class="col-lg-2">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</button>
+                      </div>
+                      
+                      <!-- Modal -->
+                      <div class="modal" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="applyModalLabel">Apply for the Job</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div id="career-success-modal" class="modal">
+                <div class="modal-content">
+                  <h3>Success</h3>
+                  <p id="career-success-message"></p>
+                </div>
+              </div>
+            <div id="career-error-modal" class="modal">
+                <div class="modal-content">
+                  <h3>Error</h3>
+                  <p id="career-error-message"></p>
+                </div>
+              </div>
+  
+  <!-- Update the message container to trigger the modal -->
+  <div id="message-container" style="display: none;"></div>
+  
+            <form class="contact-form" id="career-form" action="/careers" method="POST"
+                enctype="multipart/form-data">
+                <div class="row g-3">
+                    <div class="col-12 col-sm-6">
+                        <input type="hidden" name="jobid" value="<%- jobdescription.jobid -%>"
+                        class="form-control">
+                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            style="font-weight: bold !important;">Name</label>
+                        <input type="text" name="applicant_name" placeholder="Applicant Name..."
+                            class="form-control">
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            style="font-weight: bold !important;">Email</label>
+                        <input type="email" name="applicant_email"
+                            placeholder="Applicant Email..." class="form-control">
+                    </div>
+                    <div class="col-12 col-sm-12">
+                        <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                            style="font-weight: bold !important;">Skill
+                            Set*</label>
+                        <textarea name="description" placeholder="Key Skills.." rows="7"
+                            class="form-control"></textarea>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="w-1/1 lg:ml-0 lg:mt-20">
+                            <div class="form-upload col-12">
+                                <label class="text-16 lh-1 fw-500 text-dark-1 mb-10"
+                                    style="font-weight: bold !important;">Upload Resume*</label>
+                                <div class="form-upload__wrap">
+                                    <input type="file" name="resume" accept=".pdf"
+                                        placeholder="Cover-1.pdf"
+                                        class="form-control file-upload-info"
+                                        style="background-color:  white !important;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit">Apply Now</button>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+                      
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"
+            style="color:white"></i></a>
+       </div>
+       <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const careerForm = document.getElementById('career-form');
+          const careerSuccessModal = document.getElementById('career-success-modal');
+          const careerSuccessMessage = document.getElementById('career-success-message');
+          const careerErrorModal = document.getElementById('career-error-modal');
+          const careerErrorMessage = document.getElementById('career-error-message');
+      
+          careerForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+      
+            const formData = new FormData(careerForm);
+      
+            fetch('/careers', {
+              method: 'POST',
+              body: formData
+            })
+              .then(response => {
+                if (response.ok) {
+                  careerSuccessMessage.innerHTML = 'Info: Application submitted successfully';
+                  $(careerSuccessModal).modal('show');
+                  setTimeout(hideCareerSuccessModal, 3000);
+                } else {
+                  response.text().then(errorMessage => {
+                    showCareerErrorModal(errorMessage);
+                  });
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+                showCareerErrorModal('Failed to submit application');
+              });
+          });
+      
+          const hideCareerSuccessModal = () => {
+            $(careerSuccessModal).modal('hide');
+          };
+      
+          const hideCareerErrorModal = () => {
+            $(careerErrorModal).modal('hide');
+          };
+      
+          const showCareerErrorModal = (message) => {
+            careerErrorMessage.innerHTML = `Error: ${message}`;
+            $(careerErrorModal).modal('show');
+            setTimeout(hideCareerErrorModal, 3000);
+          };
+      
+          $(careerSuccessModal).on('hidden.bs.modal', () => {
+            careerForm.reset();
+          });
+        });
+      </script>
+       <!-- <script>
+        const form = document.getElementById('career-form');
+        const successModal = document.getElementById('success-modal');
+        const successMessage = document.getElementById('success-message');
+        const errorModal = document.getElementById('error-modal');
+        const errorMessage = document.getElementById('error-message');
+      
+        const hideSuccessModal = () => {
+          $(successModal).modal('hide');
+        };
+      
+        const hideErrorModal = () => {
+          $(errorModal).modal('hide');
+        };
+      
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+      
+          const formData = new FormData(form);
+      
+          fetch('/careers', {
+            method: 'POST',
+            body: formData
+          })
+            .then(response => {
+              if (response.ok) {
+                successMessage.innerHTML = 'Info: Application submitted successfully';
+                $(successModal).modal('show');
+                setTimeout(hideSuccessModal, 3000);
+              } else {
+                response.text().then(errorMessage => {
+                  showErrorModal(errorMessage);
+                });
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              showErrorModal('Failed to submit application');
+            });
+        });
+      
+        const showErrorModal = (message) => {
+          errorMessage.innerHTML = `Error: ${message}`;
+          $(errorModal).modal('show');
+          setTimeout(hideErrorModal, 3000);
+        };
+      
+        $(successModal).on('hidden.bs.modal', () => {
+          form.reset();
+        });
+      </script> -->
+      
+      
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

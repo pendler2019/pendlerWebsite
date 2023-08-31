@@ -1,0 +1,118 @@
+
+<footer class="footer -type-5 pt-0" style="background: linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);">
+  <div class="container">
+    <div class="row y-gap-30 pb-60">
+      
+      <div class="col-xl-5 col-lg-6 col-md-6">
+        <div class="text-17 fw-500 text-dark-1 uppercase mb-25">ABOUT</div>
+        <div class="d-flex y-gap-10 flex-column">
+          <%
+          const truncatedDescription = about.description.split(' ').slice(0, 40).join(' ');
+          %>
+          
+          <%- truncatedDescription %>
+
+              </div>
+      </div>
+      <div class="col-xl-4 col-lg-8 ">
+        <div class="text-17 fw-500 text-dark-1 uppercase mb-25">Featured Services</div>
+        <div class="row justify-between y-gap-20">
+          <div class="col-lg-auto col-md-6">
+            <div class="d-flex y-gap-10 flex-column">
+              <% ser1.forEach((serr,index)=> { %>
+                
+              <a href="<%=baseUrl %>/<%= serr.pageUrl %>/<%= serr._id %>"><i class="fas fa-caret-right pe-2"></i><%= serr.name %></a>
+              <% }) %>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-2 offset-xl-1 col-lg-4 col-md-6">
+        <div class="text-17 fw-500 text-dark-1 uppercase mb-25">Quick Access</div>
+        <div class="d-flex y-gap-10 flex-column">
+          <a href="<%=baseUrl %>/home"><i class="fas fa-caret-right pe-2"></i>Home</a>
+          <a href="<%=baseUrl %>/about"><i class="fas fa-caret-right pe-2"></i>About</a>
+          <a href="<%=baseUrl %>/technologies"><i class="fas fa-caret-right pe-2"></i>Technologies</a>
+          <a href="<%=baseUrl %>/contactus"><i class="fas fa-caret-right pe-2"></i>Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="row y-gap-30 pb-60">
+      <% addr.forEach((addrr, index) => { %>
+        <div class="col-xl-3 col-lg-5 col-md-6">
+          <div class="address-item <%= index === 0 ? 'active' : '' %>">
+            <div class="d-flex items-center">
+              
+              <div class="ml-5" style="font-weight: bold;"><%= addrr.location %></div>
+             
+            </div> <div class="d-flex items-center">
+              <div class="d-flex justify-center items-center size-50 rounded-full bg-light-7">
+                <img src="<%=baseUrl %>/img/contact-1/2.svg" alt="icon">
+              </div>
+              <a href="tel:+<%= addr.phone1 %>">
+                <div class="ml-5">+<%= addrr.phone1 %></div>
+              </a>
+            </div>
+            <div class="d-flex items-center">
+              <div class="d-flex justify-center items-center size-50 rounded-full bg-light-7">
+                <img src="<%=baseUrl %>/img/contact-1/3.svg" alt="icon">
+              </div>
+              <a href="mailto:<%= addr.email %>">
+                <div class="ml-5"><%= addrr.email %></div>
+              </a>
+            </div>
+            <div class="d-flex items-center">
+              <div class="d-flex justify-center items-center size-50 rounded-full bg-light-7">
+                <img src="<%=baseUrl %>/img/contact-1/1.svg" alt="icon">
+              </div>
+              <div class="ml-5"><%= addrr.address %></div>
+            </div>
+            <div class="footer-header-socials mt-30" style="margin-left: 40px;">
+              <div class="footer-header-socials__list d-flex items-center">
+                <a href="<%= addrr.facebook %>" class="size-40 d-flex justify-center items-center">
+                  <i class="icon-facebook"></i>
+                </a>
+                <a href="<%= addrr.twitter %>" class="size-40 d-flex justify-center items-center">
+                  <i class="icon-twitter"></i>
+                </a>
+                <a href="<%= addrr.instagram %>" class="size-40 d-flex justify-center items-center">
+                  <i class="icon-instagram"></i>
+                </a>
+                <a href="<%= addrr.linkedin %>" class="size-40 d-flex justify-center items-center">
+                  <i class="icon-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+        
+    </div>
+    <div class="py-30 border-top-light">
+      <div class="row justify-between items-center y-gap-20">
+        <div class="col-auto">
+          <div class="footer-footer__copyright d-flex items-center h-100" style="color: white;">
+            © 2023 Pendler Solutions Private Limited. All Right Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</main>
+
+<!-- JavaScript -->
+ 
+<script src="/dist/leaflet.js"></script>
+<script src="/js/vendors.js"></script>
+<script src="/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="/slider/bootstrap_latest.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://app.chatwoot.com/cdn/chatwoot.js"></script>
+
+</body>
+
+</html>

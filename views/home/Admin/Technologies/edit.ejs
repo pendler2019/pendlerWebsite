@@ -1,0 +1,94 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+<%- include('../../../_partials/dashboard/_sidebar'); -%>
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Edit</h4>
+                  
+                  <form class="forms-sample" action="/technologiesimages/<%= serr._id %>/edit" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="form-group row">
+                      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Technology Name</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="name" class="form-control" id="name" value="<%= serr.name %>" placeholder="Technology Name">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image</label>
+                        <div class="col-sm-9">
+                          <input type="file" name="imageUrl" class="form-control" id="imageUrl" value="<%= serr.imageUrl %>">
+                        </div>
+                      </div>
+                      
+                    <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Sort Order</label>
+                        <div class="col-sm-9">
+                          <input type="number" name="sortOrder" class="form-control" id="sortOrder" value="<%= serr.sortOrder %>" placeholder="Sort Order">
+                        </div>
+                      </div>
+                     
+                    <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Content</label>
+                        <div class="col-sm-9">
+                          <textarea type="text" name="description" class="form-control" id="description"><%= serr.description %></textarea>
+                        </div>
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light" id="cancelButton">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <%- include('../../../_partials/dashboard/_footer'); -%>
+      </div>
+    </div>
+  </div>
+  <script>
+      tinymce.init({
+              selector: 'textarea',
+              plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+              toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+              tinycomments_mode: 'embedded',
+              tinycomments_author: 'Author name',
+              mergetags_list: [
+                { value: 'First.Name', title: 'First Name' },
+                { value: 'Email', title: 'Email' },
+              ]
+            }); 
+            document.getElementById('cancelButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+    window.location.href = "/ourtechnologies";
+  });
+
+  // window.addEventListener('beforeunload', function(event) {
+  //   event.preventDefault(); // Prevent the page from closing
+  // });
+  </script>
+  <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="/dashboard/vendors/select2/select2.min.js"></script>
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="/dashboard/js/off-canvas.js"></script>
+  <script src="/dashboard/js/hoverable-collapse.js"></script>
+  <script src="/dashboard/js/template.js"></script>
+  <script src="/dashboard/js/settings.js"></script>
+  <script src="/dashboard/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="/dashboard/js/file-upload.js"></script>
+  <script src="/dashboard/js/typeahead.js"></script>
+  <script src="/dashboard/js/select2.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>

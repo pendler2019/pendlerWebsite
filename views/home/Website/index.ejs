@@ -1,0 +1,446 @@
+<%- include ('../../_partials/_header'); -%>
+
+  <div class="content-wrapper  js-content-wrapper">
+
+  <!--Carousel Wrapper-->
+  <div id="carousel-thumb" class="carousel carousel-thumbnails slide srjj" data-ride="carousel" data-interval="10000">
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <% banns.forEach((ban,index)=> { %>
+      <div class="carousel-item <%= index === 0 ? 'active' : '' %> carousel-banner">
+        <img class="d-block w-100 carousel-img-fit" src="../../images/<%= ban.imageUrl %>" alt="First slide">
+               <div class="row carousel-ban-text-adj">
+          <div class="row col-12 banner">
+            <h1 class="col-12 carousel-header-adj"><%= ban.name %></h1>
+            <p class="col-12 carousel-paragraph"><%= ban.description %></p>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+     
+    </div>
+    <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+
+  </div>
+  <!-- <div class="chat-icon" onclick="openChat()"></div>
+  <style>
+  .chat-icon {
+  /* Customize the chat icon styles */
+  width: 50px;
+  height: 50px;
+  background-color: #555; /* Set the background color */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer;
+}
+
+.chat-icon::before,
+.chat-icon::after {
+  /* Create the chat bubble shape */
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff; /* Set the bubble color */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+}
+
+.chat-icon::before {
+  /* Position the left side of the chat bubble */
+  margin-right: 8px;
+}
+
+.chat-icon::after {
+  /* Position the right side of the chat bubble */
+  margin-left: 8px;
+}
+
+  </style>
+  <script>
+    function openChat() {
+  // Replace 'PHONE_NUMBER' with your actual phone number
+  const phoneNumber = '+917306773602';
+
+  // Construct the WhatsApp chat URL
+  const chatUrl = `https://wa.me/${phoneNumber}`;
+
+  // Open the chat window in a new tab or window
+  window.open(chatUrl, '_blank');
+}
+
+  </script> -->
+
+  <div class="chat-icon" onclick="openChat()"></div>
+    
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/df-messenger.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Pendler"
+      agent-id="cef93a32-c301-4d52-bd30-821ed8011964"
+      language-code="en"
+    ></df-messenger>
+    <script>
+      function openChat() {
+        var chatIcon = document.querySelector('.chat-icon');
+        var chatWidget = document.querySelector('df-messenger');
+
+        if (chatWidget.hasAttribute('open')) {
+          // Hide the chatbot window or widget
+          chatIcon.style.display = 'block';
+          chatWidget.removeAttribute('open');
+        } else {
+          // Show the chatbot window or widget
+          chatIcon.style.display = 'none';
+          chatWidget.setAttribute('open', 'true');
+        }
+      }
+    </script>
+    <section class="layout-pt-lg layout-pb-lg masthead -type-6 animated"
+      style="padding-bottom: 40px;padding-top: 10px;">
+      <div class="masthead__bg">
+        <img src="img/home-7/hero/1.svg" alt="blob">
+        <img src="img/home-7/hero/2.svg" alt="blob">
+        <img src="img/home-7/hero/bg.png" alt="background">
+
+        <div class="absolute-full-center" id="js-masthead-1-particles"><canvas class="particles-js-canvas-el"
+            style="width: 100%; height: 100%;" width="1920" height="1129"></canvas></div>
+      </div>
+      <div data-anim-wrap class="container">
+        <div class="row justify-center text-center">
+          <div class="col-auto">
+
+            <div class="sectionTitle ">
+
+              <h2 class="sectionTitle__title ">Our values</h2>
+              <p class="sectionTitle__text ">“Our value is the sum of our values.” Joe Batten</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <% ourval.forEach((ov,index)=> { %>
+          <div class="col-xs-12 col-sm-4 col-md-3" style="padding-right: 15px;padding-top: 15px;border-radius: 25%">
+            <div class="image-flip">
+              <div class="mainflip flip-0">
+                <div class="frontside">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <p><img class=" img-fluid" src="../../images/<%= ov.imageUrl %>" alt="card image"
+                          style="padding-top: 15px;"></p>
+                      <h4 class="card-title"><%= ov.title %></h4>
+                      <a href="https://www.fiverr.com/share/qb8D02" class="btn  btn-primary-srj btn-sm"
+                        style="color: #04d697 !important;"><i class="fa fa-plus"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="backside">
+                  <div class="card">
+                    <div class="card-body text-center mt-4">
+                      <h4 class="card-title"><%= ov.title %></h4>
+                      <p class="card-text"><%= ov.description %></p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <section class="layout-pt-lg layout-pb-lg bg-dark-5" style="padding-top: 10px;">
+      <div data-anim-wrap class="container">
+        <div class="row y-gap-50 justify-between items-center">
+          <div class="col-lg-2">
+
+            <div class="sectionTitle -light">
+
+              <h2 class="sectionTitle__title ">What We Offer</h2>
+
+              <p class="sectionTitle__text "><%= mt.we_offer %></p>
+
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div>
+              <div class="coursesCard -type-1 shadow-3 rounded-8 bg-white"
+                style="background: linear-gradient(90deg, #E59819 0%, #1C1349 60.34%);">
+                <div class="relative">
+                  <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
+                  </div>
+                </div>
+                <div class="h-100 pt-20 pb-15 pl-30 pr-40">
+                  <div class="d-flex items-center">
+                    <div class="text-20" style="color:white !important;font-weight: bold;">Our Mission</div>
+                  </div>
+                  <div class="text-17 lh-15 fw-500 text-dark-1 mt-10" style="color:white !important;"><%= mt.mission %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div>
+              <div class="coursesCard -type-1 shadow-3 rounded-8 bg-white"
+                style="background: linear-gradient(90deg, #E59819 0%, #1C1349 60.34%);">
+                <div class="relative">
+                  <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
+                  </div>
+                </div>
+                <div class="h-100 pt-20 pb-15 pl-30 pr-40">
+                  <div class="d-flex items-center">
+                    <div class="text-20" style="color:white !important;font-weight: bold;">Our Team</div>
+                  </div>
+                  <div class="text-17 lh-15 fw-500 text-dark-1 mt-10" style="color:white !important;"><%= mt.team %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%- include ('../../_partials/_toplinks'); -%>
+
+      <section class="layout-pt-lg layout-pb-lg masthead -type-1 js-mouse-move-container"
+        style="padding-top: 10px;padding-bottom: 115px">
+        <!-- <section class="masthead -type-1 js-mouse-move-container"> -->
+        <div class="masthead__bg">
+          <img src="img/home-1/hero/bg.png" alt="image">
+        </div>
+
+
+        <div class="container">
+          <div class="row y-gap-30 justify-between items-center">
+            <div class="col-xl-5 col-lg-6 col-md-9 lg:order-2">
+              <h3 class="text-40 lh-1" style="color: white !important;">Land your dream job in Pendler Solutions</h3>
+              <p class="mt-25" style="color: white !important;">Don’t wait for opportunity. Create it.</p>
+              <div class="d-inline-block mt-30">
+                <a href="<%=baseUrl %>/careers" class="button -md -outline-purple-1 text-sky-1"
+                  style="border: 2px solid #89abd5;">Learn
+                  More</a>
+              </div>
+            </div>
+
+            <div class="col-lg-6 lg:order-1">
+              <img class="w-1/1" src="/img/dream-job.jpg" alt="image">
+            </div>
+          </div>
+
+        </div>
+
+        <svg class="svg-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="svg-waves__parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" />
+            <use xlink:href="#gentle-wave" x="48" y="3" />
+            <use xlink:href="#gentle-wave" x="48" y="5" />
+            <use xlink:href="#gentle-wave" x="48" y="7" />
+          </g>
+        </svg>
+      </section>
+      <section class="layout-pt-md layout-pb-md bg-beige-1" style="padding-top: 0px;margin-top: -70px;">
+        <div class="container">
+          <div data-anim-wrap class="row y-gap-30">
+            <% ct.forEach((ctt,index)=> { %>
+            <div class="col-lg-3 col-sm-6">
+              <div class="counter -type-1"
+                style="background: linear-gradient(90deg, #FFF 0%, #1C1349 108.34%);border-radius: 23px !important;">
+                <div class="counter__number text-dark-1"><%= ctt.h_count %></div>
+                <div class="counter__title text-light-1"><%= ctt.title %></div>
+              </div>
+            </div>
+            <% }) %>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="layout-pt-lg layout-pb-lg bg-dark-5" style="padding-top: 10px;">
+        <div class="container">
+          <div class="row justify-center text-center">
+            <div class="col-auto">
+
+              <div class="sectionTitle ">
+
+                <h2 class="sectionTitle__title text-white">Portfolio of Clients</h2>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="pt-60 lg:pt-50 js-section-slider" data-gap="30" data-pagination data-slider-cols="xl-2"
+            data-anim-wrap>
+            <div class="swiper-wrapper">
+              <% folio.forEach((folios,index)=> { %>
+              <div class="swiper-slide">
+                <div class="testimonials -type-3 sm:px-20 sm:py-40 bg-white">
+                  <div class="row y-gap-30 md:text-center md:justify-center">
+
+
+                    <div class="col-md">
+                      <div class="d-flex items-center md:justify-center">
+                        <span class="text-16 lh-1 text-yellow-1"><%= folios.client %></span>
+
+                      </div>
+
+                      <p class="testimonials__text text-16 lh-17 fw-500 mt-15"><%= folios.message %></p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+             
+            </div>
+
+            <div class="d-flex justify-center x-gap-15 items-center pt-60 lg:pt-40">
+              <div class="col-auto">
+                <button class="d-flex items-center text-24 arrow-left-hover js-prev">
+                  <i class="icon text-white icon-arrow-left"></i>
+                </button>
+              </div>
+              <div class="col-auto">
+                <div class="pagination -arrows js-pagination"></div>
+              </div>
+              <div class="col-auto">
+                <button class="d-flex items-center text-24 arrow-right-hover js-next">
+                  <i class="icon text-white icon-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%- include ('../../_partials/_footer'); -%>
+        <style>
+      .carousel-ban-text-adj {
+  position: absolute;
+  width: 800px;
+  display: flex;
+  margin-left: 18px;
+  bottom: 180px;
+  background-color: #000000a8;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+@media (max-width: 767px) {
+  .carousel-ban-text-adj {
+    width: auto;
+    margin-left: 0;
+    bottom: 120px;
+    padding: 4px;
+  }
+}
+
+          .carousel-header-adj {
+            margin: 0;
+            vertical-align: top;
+            padding-left: 0px;
+            text-align: left;
+            left: -3px;
+            color: white;
+          }
+
+          .carousel-paragraph {
+            margin-left: 0;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-left: 0;
+            color: white;
+          }
+
+          .carousel-img-fit {
+            min-width: 980px;
+            min-height: 500px;
+            object-fit: cover;
+            object-position: 50% 50%;
+          }
+
+          .carousel-banner {
+            max-height: 600px !important;
+            min-height: 500px;
+          }
+
+          .carousel-banner-indicator {
+            margin-left: auto;
+            margin-right: auto;
+            transition: 1s;
+          }
+
+          .carousel-indicators li {
+            width: 250px;
+            margin-top: -150px;
+            margin-left: -60px;
+            transition: 1s;
+            opacity: 1;
+          }
+
+          .carousel-indicators li.active {
+            border-top: 4px solid #8e3387;
+            z-index: 15;
+          }
+
+          .carousel-swap-adjuster {
+            bottom: -20px;
+          }
+
+          .carousel-banner.active {
+            display: flex;
+            justify-content: center;
+          }
+
+          .carousel-banner.carousel-item-next {
+            display: flex;
+            justify-content: center;
+          }
+
+          .carousel-banner.carousel-item-prev {
+            display: flex;
+            justify-content: center;
+          }
+
+          @media (max-width: 768px) {
+            .carousel-swap-adjuster {
+              bottom: -40px;
+            }
+          }
+
+          @media (max-width: 550px) {
+            .carousel-swap-adjuster {
+              bottom: -75px;
+            }
+          }
+
+          @media (max-width: 380px) {
+            .carousel-swap-adjuster {
+              bottom: -105px;
+            }
+          }
+          .tile_1 {
+            z-index: 14;
+          }
+
+          .tile_2 {
+            z-index: 13;
+          }
+
+          .tile_3 {
+            z-index: 12;
+          }
+        </style>
+       

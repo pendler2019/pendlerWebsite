@@ -1,0 +1,104 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+  <%- include('../../../_partials/dashboard/_sidebar'); -%>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">About Us</h4>
+                <form class="forms-sample" action="/addabout" method="POST" enctype="multipart/form-data">
+                  <!-- <div class="form-group row">
+                    <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Banner ID</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="bannerid" class="form-control" id="bannerid" placeholder="ID">
+                    </div>
+                  </div> -->
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">About Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="description" class="form-control" id="description"
+                        placeholder="About Content"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image1</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image1" class="form-control" id="image1">
+                    </div>
+                  </div>
+                   <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image2</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image2" class="form-control" id="image2">
+                    </div>
+                  </div> <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image3</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image3" class="form-control" id="image3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon1</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon1" class="form-control" id="icon1">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon1 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content1" class="form-control" id="content1"
+                        placeholder="Icon1 Content"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon2</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon2" class="form-control" id="icon2">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon2 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content2" class="form-control" id="content2"
+                        placeholder="Icon2 Content"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon3</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon3" class="form-control" id="icon3">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon3 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content3" class="form-control" id="content3"
+                        placeholder="Icon3 Content"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../../../_partials/dashboard/_footer'); -%>
+    </div>
+    </div>
+    </div>
+    <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="/dashboard/vendors/select2/select2.min.js"></script>
+    <script src="/dashboard/js/off-canvas.js"></script>
+    <script src="/dashboard/js/hoverable-collapse.js"></script>
+    <script src="/dashboard/js/template.js"></script>
+    <script src="/dashboard/js/settings.js"></script>
+    <script src="/dashboard/js/todolist.js"></script>
+    <script src="/dashboard/js/file-upload.js"></script>
+    <script src="/dashboard/js/typeahead.js"></script>
+    <script src="/dashboard/js/select2.js"></script>
+    </body>
+    </html>

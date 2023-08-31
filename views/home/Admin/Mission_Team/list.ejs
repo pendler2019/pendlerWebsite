@@ -1,0 +1,67 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+    <%- include('../../../_partials/dashboard/_sidebar'); -%>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title" style="display: inline;">Home page Contents</h4>
+                                <!-- <a class="card-description badge badge-success" href="/addwhatwe_offer" style="color: white !important;margin-left: 80px;">Add</a>                                <div class="table-responsive"> -->
+
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                        <tr>
+                                            <th>Actions</th>
+                                            <th>What we offer</th>
+                                            <th>Mission</th>
+                                            <th>Team</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% mt.forEach(mtt=> { %>
+                                            <tr>
+                                                <td>
+                                                    <a href="/mt/<%= mtt._id %>/edit" class="badge badge-info">Edit</a>
+                                                    <!-- <form action="/mt/<%= mtt._id %>/delete" method="POST"
+                                                        style="display: inline;">
+                                                        <button type="submit" class="badge badge-danger">Delete</button>
+                                                    </form> -->
+                                                </td>
+                                                <td>
+                                                    <%= mtt.we_offer %>
+                                                </td>
+                                                <td>
+                                                    <%= mtt.mission %>
+                                                </td> 
+                                                <td>
+                                                    <%= mtt.team %>
+                                                </td>
+                                               
+                                            </tr>
+                                            <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('../../../_partials/dashboard/_footer'); -%>
+            </div>
+        </div>
+        </div>
+        <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+        <script src="/dashboard/vendors/select2/select2.min.js"></script>
+        <script src="/dashboard/js/off-canvas.js"></script>
+        <script src="/dashboard/js/hoverable-collapse.js"></script>
+        <script src="/dashboard/js/template.js"></script>
+        <script src="/dashboard/js/settings.js"></script>
+        <script src="/dashboard/js/todolist.js"></script>
+        <script src="/dashboard/js/file-upload.js"></script>
+        <script src="/dashboard/js/typeahead.js"></script>
+        <script src="/dashboard/js/select2.js"></script>
+        </body>
+
+        </html>

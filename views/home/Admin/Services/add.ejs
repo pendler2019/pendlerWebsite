@@ -1,0 +1,94 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+  <%- include('../../../_partials/dashboard/_sidebar'); -%>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Our Services</h4>
+                <form class="forms-sample" action="/serviceimages" method="POST" enctype="multipart/form-data">
+                  
+                  <div class="form-group row">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Service Name [Elaborated Form]</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="title" class="form-control" id="title" placeholder="Service Name  [Elaborated Form]">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Service Name [Short Form]</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Service Name [Short Form]">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="imageUrl" class="form-control" id="imageUrl">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Sort Order</label>
+                    <div class="col-sm-9">
+                      <input type="number" name="sortOrder" class="form-control" id="sortOrder"
+                        placeholder="Sort Order">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Page Url</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="pageUrl" class="form-control" id="pageUrl"
+                        placeholder="Page Url">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Service Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="description" class="form-control" id="description"
+                        placeholder="Service Content"></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                  <button class="btn btn-light" id="cancelButton">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../../../_partials/dashboard/_footer'); -%>
+    </div>
+    </div>
+    </div>
+    <script>  tinymce.init({
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ]
+    }); document.getElementById('cancelButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+    window.location.href = "/services";
+  });
+
+  // window.addEventListener('beforeunload', function(event) {
+  //   event.preventDefault(); // Prevent the page from closing
+  // });
+  </script>
+    <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="/dashboard/vendors/select2/select2.min.js"></script>
+    <script src="/dashboard/js/off-canvas.js"></script>
+    <script src="/dashboard/js/hoverable-collapse.js"></script>
+    <script src="/dashboard/js/template.js"></script>
+    <script src="/dashboard/js/settings.js"></script>
+    <script src="/dashboard/js/todolist.js"></script>
+    <script src="/dashboard/js/file-upload.js"></script>
+    <script src="/dashboard/js/typeahead.js"></script>
+    <script src="/dashboard/js/select2.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,52 @@
+<section class="layout-pt-lg layout-pb-lg bg-light-3"  style="padding-top: 10px;">
+    <div data-anim-wrap class="container">
+      <div class="row justify-center text-center">
+        <div class="col-auto">
+          <div class="sectionTitle ">
+            <h2 class="sectionTitle__title ">Our Services</h2>
+            <p class="sectionTitle__text " style="padding-bottom: 25px;">The services are provided by businesses or professionals to help organizations manage their IT infrastructure, <br>improve their productivity, and enhance their overall performance. </p>
+          </div>
+        </div>
+      </div>
+      <div class="relative pt-0 lg:pt-50">
+        <div class="overflow-hidden js-section-slider" data-gap="30" data-loop data-pagination data-nav-prev="js-courses-prev" data-nav-next="js-courses-next" data-slider-cols="xl-4 lg-3 md-2">
+          <div class="swiper-wrapper">
+            <% ser.forEach((serr,index)=> { %>
+              
+              
+            <div data-anim-child="slide-up delay-1" class="swiper-slide">
+
+              <a href="<%=baseUrl %>/<%= serr.pageUrl %>/<%= serr._id %>" class="coursesCard -type-1 ">
+                <div class="relative">
+                  <div class="coursesCard__image overflow-hidden rounded-8">
+                    <img class="w-1/1" src="../../images/<%= serr.imageUrl %>" alt="image">
+                    <div class="coursesCard__image_overlay rounded-8"></div>
+                  </div>
+                  <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
+                  </div>
+                </div>
+
+                <div class="h-100 pt-15">
+
+                  <div class="text-17 lh-15 fw-500 text-dark-1 mt-10"><%= serr.name %></div>
+                </div>
+              </a>
+
+            </div>
+            <% }) %>
+            
+          </div>
+        </div>
+
+        <button class="section-slider-nav -prev -dark-bg-dark-2 -white -absolute size-70 rounded-full shadow-5 js-courses-prev">
+          <i class="icon icon-arrow-left text-24"></i>
+        </button>
+
+        <button class="section-slider-nav -next -dark-bg-dark-2 -white -absolute size-70 rounded-full shadow-5 js-courses-next">
+          <i class="icon icon-arrow-right text-24"></i>
+        </button>
+
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,66 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+    <%- include('../../../_partials/dashboard/_sidebar'); -%>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Edit</h4>
+                                <form class="forms-sample" action="/mt/<%= mt._id %>/edit" method="POST">
+                                    
+                                    <div class="form-group row">
+                                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">What We Offer</label>
+                                        <div class="col-sm-9">
+                                            <textarea type="text" name="we_offer" class="form-control"
+                                                placeholder="What We Offer"><%= mt.we_offer %></textarea>
+                                        </div>
+                                    </div> <div class="form-group row">
+                                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Our Mission</label>
+                                        <div class="col-sm-9">
+                                            <textarea type="text" name="mission" class="form-control"
+                                                placeholder="Our Mission"><%= mt.mission %></textarea>
+                                        </div>
+                                    </div> <div class="form-group row">
+                                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Our Team</label>
+                                        <div class="col-sm-9">
+                                            <textarea type="text" name="team" class="form-control"
+                                                placeholder="Our Team"><%= mt.team %></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                    <button class="btn btn-light" id="cancelButton">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('../../../_partials/dashboard/_footer'); -%>
+        </div>
+        </div>
+        </div>
+        <script>
+             document.getElementById('cancelButton').addEventListener('click', function(event) {
+        event.preventDefault();
+    window.location.href = "/mt";
+  });
+
+//   window.addEventListener('beforeunload', function(event) {
+//     event.preventDefault(); // Prevent the page from closing
+//   });
+        </script>
+        <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+        <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+        <script src="/dashboard/vendors/select2/select2.min.js"></script>
+        <script src="/dashboard/js/off-canvas.js"></script>
+        <script src="/dashboard/js/hoverable-collapse.js"></script>
+        <script src="/dashboard/js/template.js"></script>
+        <script src="/dashboard/js/settings.js"></script>
+        <script src="/dashboard/js/todolist.js"></script>
+        <script src="/dashboard/js/file-upload.js"></script>
+        <script src="/dashboard/js/typeahead.js"></script>
+        <script src="/dashboard/js/select2.js"></script>
+        </body>
+
+        </html>

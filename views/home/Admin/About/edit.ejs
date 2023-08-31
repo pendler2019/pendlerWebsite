@@ -1,0 +1,136 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+  <%- include('../../../_partials/dashboard/_sidebar'); -%>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Update</h4>
+                <form class="forms-sample" action="/aboutus/<%= ab._id %>/edit" method="POST" enctype="multipart/form-data">
+                
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">About Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="description" class="form-control" id="description"
+                        placeholder="About Content"><%= ab.description %></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image1</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image1" class="form-control" id="image1" value="<%= ab.image1 %>">
+                    </div>
+                  </div>
+                   <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image2</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image2" class="form-control" id="image2"  value="<%= ab.image2 %>">
+                    </div>
+                  </div> <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Image3</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="image3" class="form-control" id="image3"  value="<%= ab.image3 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Title1</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="title1" class="form-control" id="title1"  value="<%= ab.title1 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon1</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon1" class="form-control" id="icon1"  value="<%= ab.icon1 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon1 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content1" class="form-control" id="content1"
+                        placeholder="Icon1 Content"><%= ab.content1 %></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Title2</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="title2" class="form-control" id="title2"  value="<%= ab.title2 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon2</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon2" class="form-control" id="icon2"  value="<%= ab.icon2 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon2 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content2" class="form-control" id="content2"
+                        placeholder="Icon2 Content"> <%= ab.content2 %></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Title3</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="title3" class="form-control" id="title3"  value="<%= ab.title3 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Icon3</label>
+                    <div class="col-sm-9">
+                      <input type="file" name="icon3" class="form-control" id="icon3"  value="<%= ab.icon3 %>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="exampleInputMobile" class="col-sm-3 col-form-label">Icon3 Content</label>
+                    <div class="col-sm-9">
+                      <textarea type="text" name="content3" class="form-control" id="content3"
+                        placeholder="Icon3 Content"><%= ab.content3 %></textarea>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary mr-2">Update</button>
+                  <button class="btn btn-light">Cancel</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../../../_partials/dashboard/_footer'); -%>
+    </div>
+    </div>
+    </div>
+    <script>  tinymce.init({
+        selector: 'textarea',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+        mergetags_list: [
+          { value: 'First.Name', title: 'First Name' },
+          { value: 'Email', title: 'Email' },
+        ]
+      }); document.getElementById('cancelButton').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the form from submitting
+      window.location.href = "/aboutus";
+    });
+  
+    // window.addEventListener('beforeunload', function(event) {
+    //   event.preventDefault(); // Prevent the page from closing
+    // });
+    </script>
+    <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+    <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="/dashboard/vendors/select2/select2.min.js"></script>
+    <script src="/dashboard/js/off-canvas.js"></script>
+    <script src="/dashboard/js/hoverable-collapse.js"></script>
+    <script src="/dashboard/js/template.js"></script>
+    <script src="/dashboard/js/settings.js"></script>
+    <script src="/dashboard/js/todolist.js"></script>
+    <script src="/dashboard/js/file-upload.js"></script>
+    <script src="/dashboard/js/typeahead.js"></script>
+    <script src="/dashboard/js/select2.js"></script>
+    </body>
+    </html>

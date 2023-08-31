@@ -1,0 +1,183 @@
+<%- include('../../_partials/_header'); -%>
+
+  <div class="content-wrapper  js-content-wrapper">
+    <section data-anim="fade" class="breadcrumbs ">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <div class="breadcrumbs__content">
+
+              <div class="breadcrumbs__item ">
+                <a href="<%=baseUrl %>/home">Home</a>
+              </div>
+
+              <div class="breadcrumbs__item ">
+                <a href="#">About</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-header -type-1" style="background:linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);">
+      <div class="page-header__content">
+        <div class="row justify-center text-center">
+          <div class="col-auto">
+            <div>
+
+              <h1 class="page-header__title">About Us</h1>
+
+            </div>
+
+            <div>
+
+              <p class="page-header__text">We are a global IT firm serves as a trusted technology partner for our
+                customers</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section >
+      <div data-anim-wrap class="container">
+        <div class="row y-gap-50 justify-between items-center">
+          <div class="col-lg-6 pr-50 sm:pr-15">
+            <div class="composition -type-8">
+              <div class="-el-1"><img src="../../images/<%= about.image1 %>" alt="image"></div>
+              <div class="-el-2"><img src="../../images/<%= about.image2 %>" alt="image"></div>
+              <div class="-el-3"><img src="../../images/<%= about.image3 %>" alt="image"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <!-- <p class="text-dark-1 mt-30"><%=about.description %></p> -->
+            <%- about.description.replace(/<p>(.*?)<\/p>/g, '<p class="text-dark-1 mt-30">$1</p>')%>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="row justify-between pt-0 lg:pt-50" style="padding-bottom: 25px;padding-left: 25px;padding-right: 25px;">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="py-40 px-45 rounded-16 bg-light-4">
+          <div class="d-flex justify-center items-center size-70 rounded-full bg-white">
+            <img src="../../images/<%= about.icon1 %>" alt="icon">
+          </div>
+          <h4 class="text-20 lh-11 mt-25"><%=about.title1 %></h4>
+          <%- about.content1.replace(/<p>(.*?)<\/p>/g, '<p class="">$1</p>')%>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="py-40 px-45 rounded-16 bg-light-4">
+          <div class="d-flex justify-center items-center size-70 rounded-full bg-white">
+            <img src="../../images/<%= about.icon2 %>" alt="icon">
+          </div>
+          <h4 class="text-20 lh-11 mt-25"><%=about.title2 %></h4>
+          <%- about.content2.replace(/<p>(.*?)<\/p>/g, '<p class="">$1</p>')%>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="py-40 px-45 rounded-16 bg-light-4">
+          <div class="d-flex justify-center items-center size-70 rounded-full bg-white">
+            <img src="../../images/<%= about.icon3 %>" alt="icon">
+          </div>
+          <h4 class="text-20 lh-11 mt-25"><%=about.title3 %></h4>
+          <%- about.content3.replace(/<p>(.*?)<\/p>/g, '<p class="">$1</p>')%>
+
+        </div>
+      </div>
+    </div> -->
+
+    <section class="layout-pb-lg">
+      <div data-anim-wrap="" class="container animated">
+        
+
+        <div class="row y-gap-30 pt-50" style="background: linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);;">
+
+          <div data-anim-child="slide-up delay-2" class="col-lg-4 col-md-6 is-in-view">
+            <div class="stepCard -type-1 -stepCard-hover">
+              <div class="stepCard__content">
+                <div class="stepCard__icon">
+                  <!-- <i class="icon-online-learning-4 text-64 text-green-1"></i> -->
+                  <img src="../../images/<%= about.icon1 %>" alt="icon">
+                </div>
+                <h4 class="stepCard__title">01. <%=about.title1 %></h4>
+               <%- about.content1.replace(/<p>(.*?)<\/p>/g, '<p class="stepCard__text">$1</p>')%>
+              </div>
+            </div>
+          </div>
+
+          <div data-anim-child="slide-up delay-3" class="col-lg-4 col-md-6 is-in-view">
+            <div class="stepCard -type-1 -stepCard-hover">
+              <div class="stepCard__content">
+                <div class="stepCard__icon">
+                  <!-- <i class="icon-graduation-1 text-64 text-green-1"></i> -->
+                  <img src="../../images/<%= about.icon2 %>" alt="icon">
+                </div>
+                <h4 class="stepCard__title">02. <%=about.title2 %></h4>
+                <%- about.content2.replace(/<p>(.*?)<\/p>/g, '<p class="stepCard__text">$1</p>')%>
+              </div>
+            </div>
+          </div>
+
+          <div data-anim-child="slide-up delay-4" class="col-lg-4 col-md-6 is-in-view">
+            <div class="stepCard -type-1 -stepCard-hover">
+              <div class="stepCard__content">
+                <div class="stepCard__icon">
+                  <!-- <i class="icon-working-at-home-2 text-64 text-green-1"></i> -->
+                  <img src="../../images/<%= about.icon3 %>" alt="icon">
+                </div>
+                <h4 class="stepCard__title">03. <%=about.title3 %></h4>
+                <%- about.content3.replace(/<p>(.*?)<\/p>/g, '<p class="stepCard__text">$1</p>')%>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bg layout-pb-md">
+      <div class="section-bg__item -full -height-half bg-dark-5"></div>
+
+      <div data-anim-wrap class="container">
+        <div class="row justify-center text-center">
+          <div class="col-auto">
+
+            <div class="sectionTitle ">
+
+              <h2 class="sectionTitle__title text-white">Why Pendler Solutions</h2>
+
+              <p class="sectionTitle__text text-white">We deal with aspects of professional IT Services</p>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div data-anim-wrap class="row y-gap-30 justify-between pt-60 lg:pt-50">
+          <% wp.forEach((wpp,index)=> { %>
+          <div data-anim-child="slide-up delay-1" class="col-lg-4 col-md-6">
+            <div class="coursesCard -type-2 text-center pt-50 pb-40 px-30 rounded-8 bg-white shadow-2"
+              style="background: linear-gradient(90deg, #E59819 0%, #1C1349 60.34%);">
+
+              <div class="coursesCard__content mt-30" style="color: white;">
+                <h5 class="coursesCard__title text-18 lh-1 fw-500" style="color: white;font-weight: 900 !important;">
+                  <%= wpp.title %></h5>
+                <p class="coursesCard__text text-14 mt-10"><%= wpp.message %></p>
+              </div>
+            </div>
+          </div>
+<% }) %>
+          
+        </div>
+      </div>
+    </section>
+
+    <%- include('../../_partials/_footer'); -%>

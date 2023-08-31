@@ -1,0 +1,105 @@
+<%- include('../../../_partials/dashboard/_header'); -%>
+        <%- include('../../../_partials/dashboard/_sidebar'); -%>
+      <div class="main-panel">        
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Address</h4>
+                  
+                  <form class="forms-sample" action="/personal_address/<%= addr._id %>/edit" method="POST">
+                    <div class="form-group row">
+                      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Location</label>
+                      <div class="col-sm-9">
+                        <input type="text" name="location" class="form-control" placeholder="location" value="<%= addr.location %>">
+                      </div>
+                    </div> 
+                    <div class="form-group row">
+                      <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Address</label>
+                      <div class="col-sm-9">
+                        <textarea type="text" name="address" class="form-control" id="exampleInputUsername2" placeholder="Address"><%= addr.address %></textarea>
+                      </div>
+                    </div>
+                   
+                    <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Phone1</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="phone1" class="form-control" placeholder="phone1" value="<%= addr.phone1 %>">
+                        </div>
+                      </div> 
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Phone2</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="phone2" class="form-control" placeholder="phone2" value="<%= addr.phone2 %>">
+                        </div>
+                      </div>
+                       <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" name="email" class="form-control" placeholder="Email" value="<%= addr.email %>">
+                        </div>
+                      </div> 
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Twitter</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="twitter" class="form-control" placeholder="twitter" value="<%= addr.twitter %>">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Facebook</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="facebook" class="form-control" placeholder="facebook" value="<%= addr.facebook %>">
+                        </div>
+                      </div>
+                       <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Instagram</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="instagram" class="form-control" placeholder="instagram" value="<%= addr.instagram %>">
+                        </div>
+                      </div>
+                       <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">LinkedIn</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="linkedin" class="form-control" placeholder="linkedin" value="<%= addr.linkedin %>">
+                        </div>
+                      </div>
+                    
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button class="btn btn-light" id="cancelButton">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <%- include('../../../_partials/dashboard/_footer'); -%>
+      </div>
+    </div>
+  </div>
+  <script>
+  
+    document.getElementById('cancelButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+    window.location.href = "/personal_address";
+  });
+
+//   window.addEventListener('beforeunload', function(event) {
+//     event.preventDefault(); // Prevent the page from closing
+//   });
+  </script>
+  
+  <script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+  <script src="/dashboard/vendors/select2/select2.min.js"></script>
+  <script src="/dashboard/js/off-canvas.js"></script>
+  <script src="/dashboard/js/hoverable-collapse.js"></script>
+  <script src="/dashboard/js/template.js"></script>
+  <script src="/dashboard/js/settings.js"></script>
+  <script src="/dashboard/js/todolist.js"></script>
+  <script src="/dashboard/js/file-upload.js"></script>
+  <script src="/dashboard/js/typeahead.js"></script>
+  <script src="/dashboard/js/select2.js"></script>
+</body>
+</html>

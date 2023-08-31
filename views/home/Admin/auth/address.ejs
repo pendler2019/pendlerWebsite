@@ -1,0 +1,105 @@
+
+<%- include('../../../_partials/dashboard/_header'); -%>
+<%- include('../../../_partials/dashboard/_sidebar'); -%>
+
+<style>
+  /* Styles for the card */
+  .card {
+    border: 1px solid #89d141;
+  border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    margin-bottom: 5px;
+  }
+
+  .btn-edit {
+    background-color: #17a2b8;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .btn-edit:hover {
+    background-color: #138496;
+  }
+</style>
+
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title" style="display: inline;">Personal Details</h4>
+            <a class="card-description badge badge-success" href="/addaddress" style="color: white !important;margin-left: 80px;">Add</a>                                <div class="table-responsive">
+                                   
+            <div class="row">
+              <% adddr.forEach(addrr=> { %>
+              <div class="col-lg-12 col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-text"><strong>Location:</strong> <%= addrr.location %></h5>
+                    <h5 class="card-text"><strong>Address:</strong> <%= addrr.address %></h5>
+                    <p class="card-text"><strong>Phone1:</strong> <%= addrr.phone1 %></p>
+                    <p class="card-text"><strong>Phone2:</strong> <%= addrr.phone2 %></p>
+                    <p class="card-text"><strong>Email:</strong> <%= addrr.email %></p>
+                    <p class="card-text"><strong>Facebook:</strong> <%= addrr.facebook %></p>
+                    <p class="card-text"><strong>Twitter:</strong> <%= addrr.twitter %></p>
+                    <p class="card-text"><strong>Instagram:</strong> <%= addrr.instagram %></p>
+                    <p class="card-text"><strong>LinkedIn:</strong> <%= addrr.linkedin %></p>
+                    <div class="carr" style="margin-top: 15px;">
+                      <a href="/personal_address/<%= addrr._id %>/edit" class="btn-edit">Edit</a>
+                      <!-- <a href="/personal_address/<%= addrr._id %>/delete" class="btn-edit">Delete</a> -->
+                      <form action="/personal_address/<%= addrr._id %>/delete" method="POST" style="display: inline;">
+                        <button type="submit" class="badge badge-danger">Delete</button>
+                      </form>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../../../_partials/dashboard/_footer'); -%>
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<script src="/dashboard/vendors/js/vendor.bundle.base.js"></script>
+<script src="/dashboard/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+<script src="/dashboard/vendors/select2/select2.min.js"></script>
+<script src="/dashboard/js/off-canvas.js"></script>
+<script src="/dashboard/js/hoverable-collapse.js"></script>
+<script src="/dashboard/js/template.js"></script>
+<script src="/dashboard/js/settings.js"></script>
+<script src="/dashboard/js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="/dashboard/js/file-upload.js"></script>
+<script src="/dashboard/js/typeahead.js"></script>
+<script src="/dashboard/js/select2.js"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>

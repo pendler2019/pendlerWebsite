@@ -1,0 +1,136 @@
+<%- include('../../_partials/_header'); -%>
+<div class="content-wrapper  js-content-wrapper">
+  <section data-anim="fade" class="breadcrumbs ">
+      <div class="container">
+        <div class="row">
+          <div class="col-auto">
+            <div class="breadcrumbs__content">
+  
+              <div class="breadcrumbs__item ">
+                <a href="home">Home</a>
+              </div>
+  
+              <div class="breadcrumbs__item ">
+                <a href="#">Technologies</a>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-header -type-1" style="background:linear-gradient(180deg, #FFF 0%, #1C1349 108.34%);">
+      
+        <div class="page-header__content">
+          <div class="row justify-center text-center">
+            <div class="col-auto">
+              <div>
+                <h1 class="page-header__title">Technologies</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="layout-pb-lg">
+      <div class = container >
+      <div class = t_container >
+        <div class="row y-gap-30 lg:pt-50">
+          <% tec.forEach((folios,index)=> { %>
+        <div class = "card col-xl-3 col-lg-4 col-md-6">
+          <div class = image>
+            <img href = "#" src ="../../images/<%= folios.imageUrl %>"><span style="font-weight: bold;color: #1a1245;"> <%= folios.name %></span>
+           
+          </div>
+          <div class = content>
+            
+              <%- folios.description.replace(/<p>(.*?)<\/p>/g, '<p class="paragraph">$1</p>').replace(/<li>(.*?)<\/li>/g, '<li class="list">● $1</li>').replace(/<h4>(.*?)<\/h4>/g, '<br><h4 class="heading"><strong>$1</strong></h4><br>').replace(/<\/p>/g, '</p><br>').replace(/<ul>(.*?)<\/ul>/g, '<ul class="bullet-points">$1</ul>') %>
+            
+            </div>
+        </div>  
+        <% }) %>  
+          
+      </div>
+      </div>
+    </section>
+
+<style>
+
+
+.t_container {
+  position : relative;
+  /* width : 1100px; */
+  /* display : flex; */
+  /* align-items : center; */
+  justify-content : center;
+  /* flex-warp : warp; */
+  /* padding : 30px; */
+  /* padding-top: 82px; */
+padding-bottom: 0;  
+}
+
+.t_container .card {
+  position: relative;
+  max-width : 300px;
+  height : 215px;  
+  background-color : #fff;
+  margin : 30px 10px;
+  padding : 20px 15px;
+  display : flex;
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+}
+.t_container .card:hover {
+  height : 320px;    
+}
+
+
+.t_container .card {
+  position : relative;
+  /* width : 260px;
+  height : 260px; */
+   width : 260px;
+  height : 260px;
+  top : -40%;
+  left: 8px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+}
+.image{
+  position : relative;
+  width : 100%;
+  top : -15%;
+  left: 8px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+}
+
+.t_container .card .image img {
+  max-width : 100%;
+  border-radius : 15px;
+}
+
+.t_container .card .content {
+  /* position : relative; */
+  top : -60px;
+  padding : 10px 15px;
+  color : #1c1349;
+  text-align : center;
+  /* visibility : hidden; */
+  /* opacity : 0; */
+  transition : 0.3s ease-in-out;
+    
+}
+
+.t_container .card:hover .content {
+   margin-top : 30px;
+   visibility : visible;
+   /* opacity : 1; */
+   transition-delay: 0.2s;
+   color: var(--color-yellow-1) !important;
+  
+}
+</style>
+<!-- <%- include ('../../_partials/_toplinks'); -%> -->
+<%- include ('../../_partials/_footer'); -%>
